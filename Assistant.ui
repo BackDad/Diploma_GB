@@ -430,7 +430,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>Рисунок1.svg</normaloff>Рисунок1.svg</iconset>
+    <normaloff>Logo.svg</normaloff>Logo.svg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(248, 248, 248);</string>

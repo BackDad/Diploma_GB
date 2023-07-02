@@ -1,6 +1,9 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QVBoxLayout, QMessageBox
 from PyQt5.uic import loadUi
+import pymysql
+from config import host, user, password, db_name
+
 
 
 class MyWindow(QMainWindow):
@@ -24,6 +27,8 @@ class MyWindow(QMainWindow):
 
     def Show_Student_Active_f(self):
         QMessageBox.information(self, "Button Clicked", "Button Show_Student_Active was clicked!")
+
+    def Connect_to_db(self):
 
 
 if __name__ == '__main__':
