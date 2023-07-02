@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>Assistant</class>
+ <widget class="QWidget" name="Assistant">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -25,9 +25,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
@@ -97,18 +97,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>248</red>
+        <green>248</green>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
@@ -162,9 +162,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
@@ -234,18 +234,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>255</red>
-        <green>255</green>
-        <blue>255</blue>
+        <red>248</red>
+        <green>248</green>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
@@ -299,9 +299,9 @@
      <colorrole role="Button">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
@@ -371,18 +371,18 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>171</red>
+        <red>248</red>
         <green>248</green>
-        <blue>27</blue>
+        <blue>248</blue>
        </color>
       </brush>
      </colorrole>
@@ -426,7 +426,11 @@
    </palette>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Assistant</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Рисунок1.svg</normaloff>Рисунок1.svg</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(248, 248, 248);</string>
@@ -447,7 +451,8 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 165, 0);</string>
+    <string notr="true">background-color: rgb(255, 165, 0);
+background-color: rgb(255, 205, 52);</string>
    </property>
    <property name="text">
     <string>Показать всех учащихся</string>
@@ -474,13 +479,14 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 165, 0);</string>
+    <string notr="true">background-color: rgb(255, 165, 0);
+background-color: rgb(255, 205, 52);</string>
    </property>
    <property name="text">
     <string>Добавить учащегося</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Del_student">
+  <widget class="QPushButton" name="Del_Student">
    <property name="geometry">
     <rect>
      <x>380</x>
@@ -495,13 +501,14 @@
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 165, 0);</string>
+    <string notr="true">background-color: rgb(255, 165, 0);
+background-color: rgb(255, 205, 52);</string>
    </property>
    <property name="text">
     <string>Удалить учащегося</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="Show_Student_2">
+  <widget class="QPushButton" name="Show_Student_Active">
    <property name="geometry">
     <rect>
      <x>70</x>
@@ -519,7 +526,8 @@
     <bool>false</bool>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 165, 0);</string>
+    <string notr="true">background-color: rgb(255, 165, 0);
+background-color: rgb(255, 205, 52);</string>
    </property>
    <property name="text">
     <string>Показать активных</string>
@@ -553,6 +561,8 @@ background-color: rgb(39, 174, 96);</string>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="logo.qrc"/>
+ </resources>
  <connections/>
 </ui>
