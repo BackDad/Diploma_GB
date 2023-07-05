@@ -112,8 +112,8 @@ class MyWindow(QMainWindow):
             self.tableView.setSelectionBehavior(QTableView.SelectRows)
 
         except Exception as ex:
-            print("Ошибка при получении данных из базы данных.")
-            print(ex)
+            self.Error_lable.setText(f"Ошибка:{ex}")
+
 
     def openDeleteDialog(self):
         self.dialog1 = DeleteDialog()
