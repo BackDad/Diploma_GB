@@ -22,7 +22,7 @@ class DeleteDialog(QDialog):
                 cursor.execute('DELETE FROM Students WHERE firstname= %s LIMIT 1', name)
                 connection.commit()
                 self.Delete_error.setText("Запись успешно удалена из БД.")
-                print("Запись успешно удалена из БД.")
+
 
 
 class MyForm(QDialog):
