@@ -82,22 +82,6 @@ class MyWindow(QMainWindow):
         self.dialog = MyForm()
         self.dialog.show()
 
-    # def showAllStudents(self):
-    #     try:
-    #         self.connection = pymysql.connect(host=host, port=3306, password=password, database=db_name,
-    #                                           cursorclass=pymysql.cursors.DictCursor, user=user)
-    #         with self.connection.cursor() as cursor:
-    #             cursor.execute('SELECT * FROM students')
-    #             results = cursor.fetchall()
-    #         self.tableWidget.setRowCount(len(results))
-    #         for row, result in enumerate(results):
-    #             for column, data in enumerate(result.values()):
-    #                 item = QTableWidgetItem(str(data))
-    #                 self.tableWidget.setItem(row, column, item)
-    #     except Exception as ex:
-    #         print(" error")
-    #         print(ex)
-
     def showAllStudents(self):
         try:
             self.connection = pymysql.connect(host=host, port=3306, password=password, database=db_name,
