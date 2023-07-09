@@ -8,6 +8,11 @@ from config import host, user, password, db_name
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
 
+def connect_to():
+    return pymysql.connect(host=host, port=3306, password=password, database=db_name,
+                           cursorclass=pymysql.cursors.DictCursor, user=user)
+
+
 class DeleteDialog(QDialog):
     def __init__(self):
         super().__init__()
@@ -16,13 +21,11 @@ class DeleteDialog(QDialog):
 
     def deleteRow(self):
         name = self.Delete_row.text()
-        with pymysql.connect(host=host, port=3306, password=password, database=db_name,
-                             cursorclass=pymysql.cursors.DictCursor, user=user) as connection:
+        with connect_to() as connection:
             with connection.cursor() as cursor:
                 cursor.execute('DELETE FROM Students WHERE firstname= %s LIMIT 1', name)
                 connection.commit()
                 self.Delete_error.setText("Запись успешно удалена из БД.")
-
 
 
 class MyForm(QDialog):
@@ -30,8 +33,7 @@ class MyForm(QDialog):
         super().__init__()
         loadUi('Add_student_form.ui', self)
         self.Save_button.clicked.connect(self.addStudent)
-        self.connection = pymysql.connect(host=host, port=3306, password=password, database=db_name,
-                                          cursorclass=pymysql.cursors.DictCursor, user=user)
+        self.connection = connect_to()
 
     def addStudent(self):
         try:
@@ -84,8 +86,7 @@ class MyWindow(QMainWindow):
 
     def showAllStudents(self):
         try:
-            self.connection = pymysql.connect(host=host, port=3306, password=password, database=db_name,
-                                              cursorclass=pymysql.cursors.DictCursor, user=user)
+            self.connection = connect_to()
             with self.connection.cursor() as cursor:
                 cursor.execute('SELECT * FROM students ')
                 results = cursor.fetchall()
@@ -113,7 +114,6 @@ class MyWindow(QMainWindow):
 
         except Exception as ex:
             self.Error_lable.setText(f"Ошибка:{ex}")
-
 
     def openDeleteDialog(self):
         self.dialog1 = DeleteDialog()
