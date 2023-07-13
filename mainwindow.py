@@ -6,6 +6,14 @@ from deletedialog import DeleteDialog
 from addstudentform import AddStudentForm
 
 
+class CustomException(Exception):
+    def __init__(self, message):
+        self.message = message
+
+    def __str__(self):
+        return f'{self.message}'
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
@@ -26,14 +34,15 @@ class MainWindow(QMainWindow):
         self.add_student_form.show()
 
     def show_all_students(self):
+
         try:
-            try:
-                self.connection = connect_to_database()
-            except Exception as ex:
-                print(ex)
+            self.connection = connect_to_database()
             with self.connection.cursor() as cursor:
                 cursor.execute('SELECT * FROM students ')
                 results = cursor.fetchall()
+                if not results:
+                    print(True)
+                    raise CustomException("База данных пуста!")
             self.model.clear()
 
             # Устанавливаем количество строк и столбцов в модели
@@ -55,8 +64,8 @@ class MainWindow(QMainWindow):
             self.tableView.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
             self.tableView.setSelectionBehavior(QTableView.SelectRows)
 
-        except Exception as ex:
-            self.Error_label.setText(f"Ошибка: {ex}")
+        except CustomException as ex:
+            self.Error_lable.setText(f"Ошибка: {ex}")
 
     def open_delete_dialog(self):
         self.delete_dialog = DeleteDialog()
