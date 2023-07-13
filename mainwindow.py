@@ -59,7 +59,7 @@ class MainWindow(QMainWindow):
             self.Error_label.setText(f"Ошибка: {ex}")
 
     def open_delete_dialog(self):
-        self.delete_dialog = DeleteDialog(self.connection)
+        self.delete_dialog = DeleteDialog()
         self.delete_dialog.show()
 
     def show_active_students(self):
