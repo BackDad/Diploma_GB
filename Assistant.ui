@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1360</width>
-    <height>654</height>
+    <height>556</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -538,7 +538,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>Logo.svg</normaloff>Logo.svg</iconset>
+    <normaloff>Лого.png</normaloff>Лого.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
@@ -554,19 +554,6 @@ border-top-color: rgb(0, 0, 0);</string>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="3" column="1">
-     <spacer name="verticalSpacer_2">
-      <property name="orientation">
-       <enum>Qt::Vertical</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>20</width>
-        <height>40</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
     <item row="1" column="1">
      <widget class="QPushButton" name="Add_student">
       <property name="font">
@@ -598,6 +585,19 @@ QPushButton:pressed {
        <string>Добавить учащегося</string>
       </property>
      </widget>
+    </item>
+    <item row="3" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
     </item>
     <item row="1" column="0">
      <widget class="QPushButton" name="Show_Student_All">
@@ -678,9 +678,6 @@ QPushButton:pressed {
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="2">
-     <widget class="QTableView" name="tableView"/>
-    </item>
     <item row="2" column="1">
      <widget class="QPushButton" name="Del_Student">
       <property name="font">
@@ -726,6 +723,9 @@ QPushButton:pressed {
       </property>
      </spacer>
     </item>
+    <item row="0" column="0" colspan="2">
+     <widget class="QTableView" name="tableView"/>
+    </item>
     <item row="4" column="0">
      <widget class="QLabel" name="Error_lable">
       <property name="styleSheet">
@@ -733,6 +733,47 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="Connect_to_db">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+	background-color: rgb(141, 206, 180);
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+    background-color: #c0c0c0;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Подключится к БД</string>
+      </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
       </property>
      </widget>
     </item>
