@@ -6,7 +6,7 @@ from authwindow import connect_to_database
 class AddStudentForm(QDialog):
     def __init__(self):
         super().__init__()
-        loadUi('Add_student_form.ui', self)
+        loadUi('Interface/Add_student_form.ui', self)
         self.connection = connect_to_database()
         self.Save_button.clicked.connect(self.add_student)
 

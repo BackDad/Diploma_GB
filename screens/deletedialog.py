@@ -1,13 +1,13 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
-from authwindow import connect_to_database
+from screens.authwindow import connect_to_database
 
 
 class DeleteDialog(QDialog):
     def __init__(self):
         try:
             super().__init__()
-            loadUi('Delete_dialog.ui', self)
+            loadUi('Interface/Delete_dialog.ui', self)
             self.connection = connect_to_database()
             self.Delete_button.clicked.connect(self.delete_row)
         except Exception as ex:

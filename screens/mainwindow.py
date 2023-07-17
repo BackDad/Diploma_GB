@@ -1,9 +1,9 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QMainWindow, QTableView, QHeaderView
 from PyQt5.uic import loadUi
-from authwindow import connect_to_database
-from deletedialog import DeleteDialog
-from addstudentform import AddStudentForm
+from screens.authwindow import connect_to_database
+from screens.deletedialog import DeleteDialog
+from screens.addstudentform import AddStudentForm
 
 
 class CustomException(Exception):
@@ -21,7 +21,7 @@ class MainWindow(QMainWindow):
         self.auth_form = None
         self.add_student_form = None
         self.connection = None
-        loadUi('Assistant.ui', self)
+        loadUi('Interface/Assistant.ui', self)
         self.Show_Student_All.clicked.connect(self.show_all_students)
         self.Add_student.clicked.connect(self.open_add_student_form)
         self.Show_Student_Active.clicked.connect(self.show_active_students)
