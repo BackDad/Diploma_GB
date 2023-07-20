@@ -4,6 +4,7 @@ from PyQt5.uic import loadUi
 from screens.authwindow import connect_to_database
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
+from screens.StudentFileInfo import StudentInfoDialog
 
 
 class CustomException(Exception):
@@ -28,6 +29,7 @@ class MainWindow(QMainWindow):
         self.Del_Student.clicked.connect(self.open_delete_dialog)
         self.model = QStandardItemModel()
         self.tableView.setModel(self.model)
+        self.tableView.clicked.connect(self.show_student_info)
 
     def open_add_student_form(self):
         self.add_student_form = AddStudentForm()
@@ -74,3 +76,18 @@ class MainWindow(QMainWindow):
     def show_active_students(self):
         # Остальной код отображения активных студентов
         pass
+
+    def show_student_info(self, index):
+        # Получаем данные об ученике из модели
+        row = index.row()
+        student_data = {
+            "Name": self.model.item(row, 0).text(),
+            "Contact": self.model.item(row, 1).text(),
+            "Cost": self.model.item(row, 2).text(),
+            "Target": self.model.item(row, 3).text(),
+            "Date": self.model.item(row, 4).text(),
+        }
+
+        # Открываем диалоговое окно с подробной информацией об ученике
+        student_info_dialog = StudentInfoDialog(student_data, self)
+        student_info_dialog.exec_()
