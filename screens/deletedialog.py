@@ -5,8 +5,8 @@ from screens.authwindow import connect_to_database
 
 class DeleteDialog(QDialog):
     def __init__(self):
+        super().__init__()
         try:
-            super().__init__()
             loadUi('Interface/Delete_dialog.ui', self)
             self.connection = connect_to_database()
             self.Delete_button.clicked.connect(self.delete_row)

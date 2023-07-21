@@ -1,21 +1,20 @@
-from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QDialogButtonBox
+from PyQt5.QtWidgets import QDialog
+from PyQt5.uic import loadUi
 
 
 class StudentInfoDialog(QDialog):
-    def __init__(self, student_data, parent=None):
-        super().__init__(parent)
+    def __init__(self, student_data):
+        try:
+            super().__init__()
+            loadUi('Interface/StudentInfoDialog.ui', self)
+            # print(student_data)
+            self.name_l.setText(student_data['Name'])
+            self.target_l.setText(student_data['Target'])
+            self.contact_l.setText(student_data['Contact'])
+            self.cost_l.setText(student_data['Cost'])
+            self.Ok_b.clicked.connect(self.close_window)
+        except Exception as ex:
+            print(ex)
 
-        # Создаем макет для диалогового окна
-        layout = QVBoxLayout()
-
-        # Добавляем виджеты с информацией об ученике на макет
-        for key, value in student_data.items():
-            label = QLabel(f"{key}: {value}")
-            layout.addWidget(label)
-
-        # Кнопка для закрытия диалогового окна
-        button_box = QDialogButtonBox(QDialogButtonBox.Ok)
-        button_box.accepted.connect(self.accept)
-
-        layout.addWidget(button_box)
-        self.setLayout(layout)
+    def close_window(self):
+        self.close()

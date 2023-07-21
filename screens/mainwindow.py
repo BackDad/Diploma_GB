@@ -18,10 +18,12 @@ class CustomException(Exception):
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
+        self.profile = None
         self.delete_dialog = None
         self.auth_form = None
         self.add_student_form = None
         self.connection = None
+        self.student_data = None
         loadUi('Interface/Assistant.ui', self)
         self.Show_Student_All.clicked.connect(self.show_all_students)
         self.Add_student.clicked.connect(self.open_add_student_form)
@@ -74,20 +76,20 @@ class MainWindow(QMainWindow):
         self.delete_dialog.show()
 
     def show_active_students(self):
-        # Остальной код отображения активных студентов
+        # TODO: Остальной код отображения активных студентов
         pass
 
     def show_student_info(self, index):
         # Получаем данные об ученике из модели
+
         row = index.row()
         student_data = {
-            "Name": self.model.item(row, 0).text(),
-            "Contact": self.model.item(row, 1).text(),
-            "Cost": self.model.item(row, 2).text(),
-            "Target": self.model.item(row, 3).text(),
-            "Date": self.model.item(row, 4).text(),
+            "Name": self.model.item(row, 1).text(),
+            "Contact": self.model.item(row, 2).text(),
+            "Cost": self.model.item(row, 3).text(),
+            "Target": self.model.item(row, 4).text(),
+            "Date": self.model.item(row, 5).text(),
         }
-
-        # Открываем диалоговое окно с подробной информацией об ученике
-        student_info_dialog = StudentInfoDialog(student_data, self)
-        student_info_dialog.exec_()
+        print(student_data)
+        self.profile = StudentInfoDialog(student_data)
+        self.profile.show()
