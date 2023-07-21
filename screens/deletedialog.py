@@ -16,14 +16,12 @@ class DeleteDialog(QDialog):
     def delete_row(self):
         name = self.Delete_row.text()
         try:
-            with self.connection.cursor() as cursor:
-                cursor.execute('SELECT * FROM students ')
-                results = cursor.fetchall()
             if name != "":
                 with self.connection.cursor() as cursor:
                     cursor.execute('DELETE FROM Students WHERE firstname = %s LIMIT 1', name)
                     self.connection.commit()
                     self.Delete_error.setText("Запись успешно удалена из БД.")
+                    self.close()
             else:
                 self.Delete_error.setText("Пустой запрос")
         except Exception as ex:
