@@ -90,6 +90,5 @@ class MainWindow(QMainWindow):
             "Target": self.model.item(row, 4).text(),
             "Date": self.model.item(row, 5).text(),
         }
-        print(student_data)
         self.profile = StudentInfoDialog(student_data)
         self.profile.show()
