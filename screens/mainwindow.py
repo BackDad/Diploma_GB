@@ -1,8 +1,6 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QMainWindow, QTableView, QHeaderView
 from PyQt5.uic import loadUi
-
-from screens.authwindow import AuthWindow
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
 from screens.StudentFileInfo import StudentInfoDialog
@@ -19,7 +17,6 @@ class CustomException(Exception):
 class MainWindow(QMainWindow):
     def __init__(self, connection):
         super().__init__()
-        self.window_a = None
         self.connection = connection
         self.profile = None
         self.delete_dialog = None

@@ -21,6 +21,7 @@ class DeleteDialog(QDialog):
                     cursor.execute('DELETE FROM Students WHERE id = %s LIMIT 1', id_s)
                     self.connection.commit()
                     self.Delete_error.setText("Запись успешно удалена из БД.")
+
                     self.close()
             else:
                 self.Delete_error.setText("Пустой запрос")

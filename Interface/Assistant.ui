@@ -761,6 +761,7 @@ QPushButton:pressed {
   </widget>
  </widget>
  <resources>
+  <include location="../logo.qrc"/>
   <include location="../pic.qrc"/>
  </resources>
  <connections/>

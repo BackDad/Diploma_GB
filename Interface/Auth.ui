@@ -29,11 +29,26 @@
    <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
 border-top-color: rgb(0, 0, 0);</string>
   </property>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>17</x>
+     <y>82</y>
+     <width>29</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>PASS:</string>
+   </property>
+  </widget>
   <widget class="QLineEdit" name="Host_name">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>40</y>
+     <x>70</x>
+
+     <y>30</y>
+
      <width>133</width>
      <height>20</height>
     </rect>
@@ -46,7 +61,7 @@ border-top-color: rgb(0, 0, 0);</string>
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>130</y>
+     <y>108</y>
      <width>133</width>
      <height>20</height>
     </rect>
@@ -55,11 +70,24 @@ border-top-color: rgb(0, 0, 0);</string>
     <string>myassistant</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>17</x>
+     <y>56</y>
+     <width>30</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>USER:</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="Connect">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>160</y>
+     <x>50</x>
+     <y>154</y>
      <width>190</width>
      <height>33</height>
     </rect>
@@ -122,7 +150,7 @@ QPushButton:pressed {
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>100</y>
+     <y>82</y>
      <width>133</width>
      <height>20</height>
     </rect>
@@ -134,11 +162,24 @@ QPushButton:pressed {
     <enum>QLineEdit::Password</enum>
    </property>
   </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>17</x>
+     <y>108</y>
+     <width>47</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>DB_NAME</string>
+   </property>
+  </widget>
   <widget class="QLineEdit" name="User_name">
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>70</y>
+     <y>56</y>
      <width>133</width>
      <height>20</height>
     </rect>
@@ -158,6 +199,19 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string>Подключение к БД</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>17</x>
+     <y>30</y>
+     <width>31</width>
+     <height>13</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>HOST:</string>
    </property>
   </widget>
  </widget>
