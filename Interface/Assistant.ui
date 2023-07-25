@@ -544,22 +544,6 @@
    <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
 border-top-color: rgb(0, 0, 0);</string>
   </property>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>840</x>
-     <y>470</y>
-     <width>61</width>
-     <height>51</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap resource="../pic.qrc">:/newPrefix/pic.png</pixmap>
-   </property>
-  </widget>
   <widget class="QPushButton" name="Add_student">
    <property name="geometry">
     <rect>
@@ -754,6 +738,25 @@ QPushButton:pressed {
    </property>
    <property name="text">
     <string>TextLabel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>462</y>
+     <width>61</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="../pic.qrc">:/newPrefix1/pic.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

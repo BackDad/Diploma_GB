@@ -16,7 +16,7 @@ class CustomException(Exception):
 
 class MainWindow(QMainWindow):
     def __init__(self, connection):
-        super(MainWindow, self).__init__()
+        super().__init__()
         self.connection = connection
         self.profile = None
         self.delete_dialog = None

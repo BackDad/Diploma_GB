@@ -10,7 +10,7 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>460</height>
+    <height>285</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -26,8 +26,8 @@
    <string>Profile</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-color: qlineargradient(spread:pad, x1:0.483, y1:0, x2:0.483, y2:1, stop:0.875 rgba(73, 73, 73, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.555 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
+border-top-color: rgb(0, 0, 0);</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
@@ -45,7 +45,8 @@ background-color: qlineargradient(spread:pad, x1:0.483, y1:0, x2:0.483, y2:1, st
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgba(255, 255, 255, 0);
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Имя</string>
@@ -70,6 +71,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -101,7 +103,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgba(255, 255, 255, 0);
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Цель</string>
@@ -126,6 +129,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="frameShadow">
@@ -160,7 +164,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgba(255, 255, 255, 0);
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Контакты</string>
@@ -185,6 +190,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -216,7 +222,8 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
+background-color: rgba(255, 255, 255, 0);
+color: rgb(0, 0, 0);</string>
      </property>
      <property name="text">
       <string>Стоимость</string>
@@ -241,6 +248,7 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">color: rgb(255, 255, 255);
+color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
