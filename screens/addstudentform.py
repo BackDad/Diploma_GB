@@ -1,13 +1,13 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
-from screens.authwindow import AuthWindow, connect_to_database
 
 
 class AddStudentForm(QDialog):
-    def __init__(self):
+
+    def __init__(self, connection):
         super().__init__()
         loadUi('Interface/Add_student_form.ui', self)
-        self.connection = connect_to_database()
+        self.connection = connection
         self.Save_button.clicked.connect(self.add_student)
 
     def add_student(self):

@@ -1,11 +1,35 @@
 import pymysql
-from config.config import host, user, password, db_name
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
 
 
-def connect_to_database(host=host, user=user, password=password,
-                        db_name=db_name):
+class AuthWindow(QDialog):
+    def __init__(self):
+        super().__init__()
+        loadUi('Interface/Auth.ui', self)
+
+        self.connection = None
+        self.Connect.clicked.connect(self.auth)
+
+    def auth(self):
+        host = self.Host_name.text()
+        user = self.User_name.text()
+        password = self.Pass_value.text()
+        db_name = self.DB_name.text()
+
+        connection = connect_to_database(host, user, password, db_name)
+        if connection:
+            self.connection = connection
+            self.accept()
+        else:
+            self.show_error("Ошибка подключения к базе данных.")
+
+    def show_error(self, message):
+        # Отображение сообщения об ошибке пользователю
+        pass
+
+
+def connect_to_database(host, user, password, db_name):
     try:
         print("Йэс")
         return pymysql.connect(
@@ -15,23 +39,3 @@ def connect_to_database(host=host, user=user, password=password,
     except Exception as ex:
         print("Ошибка подключения к базе данных:", ex)
         return None
-
-
-class AuthWindow(QDialog):
-    def __init__(self):
-        super().__init__()
-        loadUi("Interface/Auth.ui", self)
-        self.Connect.clicked.connect(self.save_data_to_config())
-
-    def save_data_to_config(self):
-        host = self.label_host.text()
-        user = self.label_user.text()
-        password = self.label_password.text()
-        db_name = self.label_db_name.text()
-
-        # Записываем данные в файл config.py
-        with open("config/config.py", "w") as file:
-            file.write(f"host = '{host}'\n")
-            file.write(f"user = '{user}'\n")
-            file.write(f"password = '{password}'\n")
-            file.write(f"db_name = '{db_name}'\n")
