@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
-from screens.authwindow import connect_to_database
+from screens.authwindow import AuthWindow, connect_to_database
 
 
 class DeleteDialog(QDialog):
@@ -10,15 +10,16 @@ class DeleteDialog(QDialog):
             loadUi('Interface/Delete_dialog.ui', self)
             self.connection = connect_to_database()
             self.Delete_button.clicked.connect(self.delete_row)
+
         except Exception as ex:
             print(ex)
 
     def delete_row(self):
-        name = self.Delete_row.text()
+        id_student = self.Delete_row.text()
         try:
-            if name != "":
+            if id_student != "":
                 with self.connection.cursor() as cursor:
-                    cursor.execute('DELETE FROM Students WHERE firstname = %s LIMIT 1', name)
+                    cursor.execute('DELETE FROM Students WHERE id = %s LIMIT 1', id_student)
                     self.connection.commit()
                     self.Delete_error.setText("Запись успешно удалена из БД.")
                     self.close()

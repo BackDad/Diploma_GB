@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
-from screens.authwindow import connect_to_database
+from screens.authwindow import AuthWindow, connect_to_database
 
 
 class AddStudentForm(QDialog):

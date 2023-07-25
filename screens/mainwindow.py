@@ -1,7 +1,7 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QMainWindow, QTableView, QHeaderView
 from PyQt5.uic import loadUi
-from screens.authwindow import connect_to_database
+from screens.authwindow import AuthWindow, connect_to_database
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
 from screens.StudentFileInfo import StudentInfoDialog
@@ -18,13 +18,13 @@ class CustomException(Exception):
 class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
+        self.window_a = None
+        self.connection = None
         self.profile = None
         self.delete_dialog = None
-        self.auth_form = None
         self.add_student_form = None
-        self.connection = None
         self.student_data = None
-        loadUi('Interface/Assistant.ui', self)
+        loadUi('Interface/Assistant.ui', self)  
         self.Show_Student_All.clicked.connect(self.show_all_students)
         self.Add_student.clicked.connect(self.open_add_student_form)
         self.Show_Student_Active.clicked.connect(self.show_active_students)
@@ -32,23 +32,21 @@ class MainWindow(QMainWindow):
         self.model = QStandardItemModel()
         self.tableView.setModel(self.model)
         self.tableView.clicked.connect(self.show_student_info)
+        self.Connect_to_db.clicked.connect(self.auth_form)
 
     def open_add_student_form(self):
         self.add_student_form = AddStudentForm()
         self.add_student_form.show()
 
     def show_all_students(self):
-
         try:
             self.connection = connect_to_database()
             with self.connection.cursor() as cursor:
                 cursor.execute('SELECT * FROM students ')
                 results = cursor.fetchall()
                 if not results:
-                    print(True)
                     raise CustomException("База данных пуста!")
             self.model.clear()
-
             # Устанавливаем количество строк и столбцов в модели
             self.model.setRowCount(len(results))
             self.model.setColumnCount(
@@ -92,3 +90,10 @@ class MainWindow(QMainWindow):
         }
         self.profile = StudentInfoDialog(student_data)
         self.profile.show()
+
+    def auth_form(self):
+        try:
+            self.window_a = AuthWindow()
+            self.window_a.show()
+        except Exception as ex:
+            print(ex)
