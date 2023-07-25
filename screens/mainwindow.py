@@ -1,7 +1,6 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QMainWindow, QTableView, QHeaderView
 from PyQt5.uic import loadUi
-from screens.authwindow import connect_to_database
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
 from screens.StudentFileInfo import StudentInfoDialog
@@ -16,13 +15,13 @@ class CustomException(Exception):
 
 
 class MainWindow(QMainWindow):
-    def __init__(self):
+    def __init__(self, connection):
         super(MainWindow, self).__init__()
+        self.connection = connection
         self.profile = None
         self.delete_dialog = None
         self.auth_form = None
         self.add_student_form = None
-        self.connection = None
         self.student_data = None
         loadUi('Interface/Assistant.ui', self)
         self.Show_Student_All.clicked.connect(self.show_all_students)
@@ -34,18 +33,16 @@ class MainWindow(QMainWindow):
         self.tableView.clicked.connect(self.show_student_info)
 
     def open_add_student_form(self):
-        self.add_student_form = AddStudentForm()
+        self.add_student_form = AddStudentForm(self.connection)
         self.add_student_form.show()
 
     def show_all_students(self):
 
         try:
-            self.connection = connect_to_database()
             with self.connection.cursor() as cursor:
                 cursor.execute('SELECT * FROM students ')
                 results = cursor.fetchall()
                 if not results:
-                    print(True)
                     raise CustomException("База данных пуста!")
             self.model.clear()
 
@@ -69,14 +66,16 @@ class MainWindow(QMainWindow):
             self.tableView.setSelectionBehavior(QTableView.SelectRows)
 
         except CustomException as ex:
+
             self.Error_lable.setText(f"Ошибка: {ex}")
 
     def open_delete_dialog(self):
-        self.delete_dialog = DeleteDialog()
+        self.delete_dialog = DeleteDialog(self.connection)
         self.delete_dialog.show()
 
+    # TODO: Остальной код отображения активных студентов
     def show_active_students(self):
-        # TODO: Остальной код отображения активных студентов
+
         pass
 
     def show_student_info(self, index):
