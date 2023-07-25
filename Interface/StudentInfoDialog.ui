@@ -81,6 +81,9 @@ background-color: rgba(255, 255, 255, 0);</string>
      <property name="openExternalLinks">
       <bool>false</bool>
      </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -137,6 +140,9 @@ background-color: rgba(255, 255, 255, 0);</string>
      <property name="openExternalLinks">
       <bool>false</bool>
      </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
     </widget>
    </item>
    <item row="2" column="0">
@@ -190,6 +196,9 @@ background-color: rgba(255, 255, 255, 0);</string>
      <property name="openExternalLinks">
       <bool>false</bool>
      </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+     </property>
     </widget>
    </item>
    <item row="3" column="0">
@@ -242,6 +251,9 @@ background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="openExternalLinks">
       <bool>false</bool>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
