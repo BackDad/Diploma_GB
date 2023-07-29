@@ -4,6 +4,7 @@ from PyQt5.uic import loadUi
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
 from screens.StudentFileInfo import StudentInfoDialog
+from screens.add_lesson import Add_lesson
 
 
 class CustomException(Exception):
@@ -17,6 +18,7 @@ class CustomException(Exception):
 class MainWindow(QMainWindow):
     def __init__(self, connection):
         super().__init__()
+        self.add_lesson_w = None
         self.connection = connection
         self.profile = None
         self.delete_dialog = None
@@ -26,11 +28,12 @@ class MainWindow(QMainWindow):
         loadUi('Interface/Assistant.ui', self)
         self.Show_Student_All.clicked.connect(self.show_all_students)
         self.Add_student.clicked.connect(self.open_add_student_form)
-        self.Show_Student_Active.clicked.connect(self.show_active_students)
+        self.Show_Student_Active.clicked.connect(self.add_lesson)
         self.Del_Student.clicked.connect(self.open_delete_dialog)
+        self.tableView.clicked.connect(self.show_student_info)
         self.model = QStandardItemModel()
         self.tableView.setModel(self.model)
-        self.tableView.clicked.connect(self.show_student_info)
+        self.show_all_students()
 
     def open_add_student_form(self):
         self.add_student_form = AddStudentForm(self.connection)
@@ -73,11 +76,6 @@ class MainWindow(QMainWindow):
         self.delete_dialog = DeleteDialog(self.connection)
         self.delete_dialog.show()
 
-    # TODO: Остальной код отображения активных студентов
-    def show_active_students(self):
-
-        pass
-
     def show_student_info(self, index):
         # Получаем данные об ученике из модели
 
@@ -91,3 +89,10 @@ class MainWindow(QMainWindow):
         }
         self.profile = StudentInfoDialog(student_data)
         self.profile.show()
+
+    def add_lesson(self):
+        try:
+            self.add_lesson_w = Add_lesson(self.connection)
+            self.add_lesson_w.show()
+        except Exception as ex:
+            print(ex)
