@@ -26,8 +26,7 @@
    <string>Profile</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.555 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-top-color: rgb(0, 0, 0);</string>
+   <string notr="true"/>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
@@ -267,6 +266,12 @@ background-color: rgba(255, 255, 255, 0);</string>
    </item>
    <item row="4" column="1">
     <widget class="QPushButton" name="Ok_b">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 QPushButton {

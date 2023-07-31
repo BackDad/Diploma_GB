@@ -26,17 +26,22 @@
    <string>Авторизация</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-top-color: rgb(0, 0, 0);</string>
+   <string notr="true"/>
   </property>
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
      <x>17</x>
      <y>82</y>
-     <width>29</width>
-     <height>13</height>
+     <width>61</width>
+     <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>PASS:</string>
@@ -45,11 +50,17 @@ border-top-color: rgb(0, 0, 0);</string>
   <widget class="QLineEdit" name="Host_name">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>130</x>
      <y>30</y>
      <width>133</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>localhost</string>
@@ -58,11 +69,17 @@ border-top-color: rgb(0, 0, 0);</string>
   <widget class="QLineEdit" name="DB_name">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>130</x>
      <y>108</y>
      <width>133</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>myassistant</string>
@@ -73,9 +90,15 @@ border-top-color: rgb(0, 0, 0);</string>
     <rect>
      <x>17</x>
      <y>56</y>
-     <width>30</width>
-     <height>13</height>
+     <width>61</width>
+     <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>USER:</string>
@@ -137,6 +160,12 @@ QPushButton:pressed {
      <height>57</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -147,11 +176,17 @@ QPushButton:pressed {
   <widget class="QLineEdit" name="Pass_value">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>130</x>
      <y>82</y>
      <width>133</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>gfhjkmlkz,fpslfyys[1!</string>
@@ -165,22 +200,34 @@ QPushButton:pressed {
     <rect>
      <x>17</x>
      <y>108</y>
-     <width>47</width>
-     <height>13</height>
+     <width>91</width>
+     <height>16</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
    <property name="text">
-    <string>DB_NAME</string>
+    <string>DB_NAME:</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="User_name">
    <property name="geometry">
     <rect>
-     <x>70</x>
+     <x>130</x>
      <y>56</y>
      <width>133</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>root</string>
@@ -191,9 +238,15 @@ QPushButton:pressed {
     <rect>
      <x>70</x>
      <y>11</y>
-     <width>97</width>
-     <height>13</height>
+     <width>201</width>
+     <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>Подключение к БД</string>
@@ -204,9 +257,15 @@ QPushButton:pressed {
     <rect>
      <x>17</x>
      <y>30</y>
-     <width>31</width>
-     <height>13</height>
+     <width>71</width>
+     <height>16</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>14</pointsize>
+    </font>
    </property>
    <property name="text">
     <string>HOST:</string>

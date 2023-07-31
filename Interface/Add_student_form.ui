@@ -6,16 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>503</width>
+    <width>577</width>
     <height>428</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>14</pointsize>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Добавление записи</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-color: qlineargradient(spread:pad, x1:0.483, y1:0, x2:0.483, y2:1, stop:0.875 rgba(73, 73, 73, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true"/>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -27,7 +31,7 @@ background-color: qlineargradient(spread:pad, x1:0.483, y1:0, x2:0.483, y2:1, st
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+      <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -39,12 +43,13 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLineEdit" name="Name">
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10px;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
     </widget>
    </item>
@@ -57,7 +62,7 @@ border-radius: 10px;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+      <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -69,12 +74,13 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLineEdit" name="Target">
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10px;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
       <string>Просто</string>
@@ -90,7 +96,7 @@ border-radius: 10px;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+      <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -102,12 +108,13 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLineEdit" name="Contact">
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10px;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
       <string>+79601253072</string>
@@ -123,7 +130,7 @@ border-radius: 10px;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+      <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -135,12 +142,13 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLineEdit" name="Cost">
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10px;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
       <string>1000</string>
@@ -156,7 +164,7 @@ border-radius: 10px;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+      <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
@@ -168,12 +176,13 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLineEdit" name="Date">
      <property name="font">
       <font>
+       <family>Times New Roman</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-radius: 10px;</string>
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
       <string>2023-07-04</string>
@@ -215,8 +224,15 @@ QPushButton:pressed {
    </item>
    <item>
     <widget class="QLabel" name="Error_lable">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
      </property>
      <property name="text">
       <string/>
