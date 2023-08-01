@@ -6,116 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>290</width>
-    <height>290</height>
+    <width>350</width>
+    <height>350</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>290</width>
-    <height>290</height>
+    <width>350</width>
+    <height>350</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>290</width>
-    <height>290</height>
+    <width>350</width>
+    <height>350</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>Авторизация</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: rgb(255, 218, 185);</string>
   </property>
-  <widget class="QLabel" name="label_4">
+  <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>17</x>
-     <y>82</y>
-     <width>61</width>
-     <height>16</height>
+     <x>150</x>
+     <y>280</y>
+     <width>58</width>
+     <height>57</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Times New Roman</family>
+     <family>Palatino Linotype</family>
      <pointsize>14</pointsize>
     </font>
    </property>
    <property name="text">
-    <string>PASS:</string>
+    <string/>
    </property>
-  </widget>
-  <widget class="QLineEdit" name="Host_name">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>30</y>
-     <width>133</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>localhost</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="DB_name">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>108</y>
-     <width>133</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>myassistant</string>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_3">
-   <property name="geometry">
-    <rect>
-     <x>17</x>
-     <y>56</y>
-     <width>61</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>USER:</string>
+   <property name="pixmap">
+    <pixmap>../pic.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="Connect_to_db">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>154</y>
-     <width>190</width>
-     <height>33</height>
+     <x>80</x>
+     <y>230</y>
+     <width>214</width>
+     <height>38</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Times New Roman</family>
+     <family>Palatino Linotype</family>
      <pointsize>14</pointsize>
     </font>
    </property>
@@ -129,7 +75,7 @@ QPushButton {
     border-width: 2px;
     border-color: gray;
     padding: 4px;
-	background-color: rgb(141, 206, 180);
+	background-color: rgb(255, 209, 187);
 	border-radius: 10px;
 
 
@@ -137,7 +83,7 @@ QPushButton {
 
 QPushButton:pressed {
     border-style: inset;
-    background-color: #c0c0c0;
+    background-color: #FF7518;
 }
 </string>
    </property>
@@ -151,124 +97,219 @@ QPushButton:pressed {
     <bool>false</bool>
    </property>
   </widget>
-  <widget class="QLabel" name="label_6">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>214</y>
-     <width>58</width>
-     <height>57</height>
+     <x>1</x>
+     <y>40</y>
+     <width>332</width>
+     <height>192</height>
     </rect>
    </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../pic.png</pixmap>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="Pass_value">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>82</y>
-     <width>133</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>gfhjkmlkz,fpslfyys[1!</string>
-   </property>
-   <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_5">
-   <property name="geometry">
-    <rect>
-     <x>17</x>
-     <y>108</y>
-     <width>91</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>DB_NAME:</string>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="User_name">
-   <property name="geometry">
-    <rect>
-     <x>130</x>
-     <y>56</y>
-     <width>133</width>
-     <height>20</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>root</string>
-   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1" colspan="2">
+     <widget class="QLineEdit" name="Host_name">
+      <property name="minimumSize">
+       <size>
+        <width>133</width>
+        <height>31</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>localhost</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="dragEnabled">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QLineEdit" name="User_name">
+      <property name="minimumSize">
+       <size>
+        <width>133</width>
+        <height>31</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>root</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="2">
+     <widget class="QLineEdit" name="DB_name">
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>myassistant</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>HOST:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>DB_NAME:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="2">
+     <widget class="QLineEdit" name="Pass_value">
+      <property name="minimumSize">
+       <size>
+        <width>133</width>
+        <height>31</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>gfhjkmlkz,fpslfyys[1!</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::Password</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>PASS:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="font">
+       <font>
+        <family>Palatino Linotype</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>USER:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>70</x>
-     <y>11</y>
-     <width>201</width>
-     <height>16</height>
+     <x>80</x>
+     <y>10</y>
+     <width>171</width>
+     <height>26</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <family>Times New Roman</family>
+     <family>Palatino Linotype</family>
      <pointsize>14</pointsize>
     </font>
    </property>
    <property name="text">
     <string>Подключение к БД</string>
    </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>17</x>
-     <y>30</y>
-     <width>71</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>14</pointsize>
-    </font>
-   </property>
-   <property name="text">
-    <string>HOST:</string>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
  </widget>
