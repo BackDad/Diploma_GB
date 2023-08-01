@@ -6,6 +6,7 @@ from datetime import datetime
 class Add_lesson(QDialog):
     def __init__(self, connection):
         super().__init__()
+        self.list_tuple = None
         self.result = None
         self.connection = connection
         loadUi('Interface/Add_lesson.ui', self)
@@ -18,23 +19,27 @@ class Add_lesson(QDialog):
             results = cursor.fetchall()
             self.result = results
             print(results)
-            for items in results:
-                self.list_of_students.addItems([str((items['firstname'], items['id'], items['cost']))])
+
+            self.list_of_students.addItems([items['firstname'] for items in results])
+            self.list_tuple = [[items['firstname'], items['id'], items['cost']] for items in results]
+            print(self.list_tuple)
 
     #
     def send_to(self):
         try:
-            query_data = [int(self.list_of_students.currentText().split(',')[1]),  # students_ID
+            query_data = [self.list_tuple[self.list_of_students.currentIndex()][1],  # students_ID
                           self.timeEdit.text(),  # Длительность
                           self.lesson_topic.text(),  # Тема урока
                           self.payment.isChecked(),  # Проверка оплаты
                           str(datetime.now().date()),  # Дата занятия
-                          int(self.list_of_students.currentText().split(',')[2].replace(')', ''))
+                          self.list_tuple[self.list_of_students.currentIndex()][2]
                           ]
             # ______________________________________
             print(query_data)
             for types in range(len(query_data)):
-                print(type(query_data[types]))
+                print(query_data[types], type(query_data[types]))
+
+
             # ______________________________________
             with self.connection.cursor() as cursor:
                 cursor.execute(

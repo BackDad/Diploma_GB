@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
         self.auth_form = None
         self.add_student_form = None
         self.student_data = None
-        loadUi('Interface/Assistant.ui', self)
+        loadUi('Interface/Draft/New_view.ui', self)
         self.Show_Student_All.clicked.connect(self.show_all_students)
         self.Add_student.clicked.connect(self.open_add_student_form)
         self.Show_Student_Active.clicked.connect(self.add_lesson)
