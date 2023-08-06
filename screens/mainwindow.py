@@ -48,6 +48,8 @@ class MainWindow(QMainWindow):
         self.add_student_form = AddStudentForm(self.connection)
         self.add_student_form.data_updated.connect(self.show_all_students)
 
+        self.add_student_form.data_updated.connect(self.show_current_lessons)
+        self.delete_dialog.data_updated.connect(self.show_current_lessons)
         if self.Tconnection():
             self.show_all_students()
 
