@@ -12,6 +12,7 @@ class AuthWindow(QDialog):
 
         self.connection = None
         self.Connect_to_db.clicked.connect(self.auth)
+        self.Error_lable.setText('Приветствую!')
 
     def auth(self):
         host = self.Host_name.text()
@@ -19,7 +20,7 @@ class AuthWindow(QDialog):
         password = self.Pass_value.text()
         db_name = self.DB_name.text()
 
-        connection = connect_to_database(host, user, password, db_name)
+        connection = self.connect_to_database(host, user, password, db_name)
         if connection:
             self.connection = connection
             self.accept()
@@ -30,13 +31,14 @@ class AuthWindow(QDialog):
         # Отображение сообщения об ошибке пользователю
         pass
 
+    def connect_to_database(self, host, user, password, db_name):
+        try:
+            return pymysql.connect(
+                host=host, port=3306, password=password, database=db_name,
+                cursorclass=pymysql.cursors.DictCursor, user=user
+            )
+        except Exception as ex:
 
-def connect_to_database(host, user, password, db_name):
-    try:
-        return pymysql.connect(
-            host=host, port=3306, password=password, database=db_name,
-            cursorclass=pymysql.cursors.DictCursor, user=user
-        )
-    except Exception as ex:
-        print("Ошибка подключения к базе данных:", ex)
-        return None
+            print("Ошибка подключения к базе данных:", ex)
+            self.Error_lable.setText(f"Ошибка: {ex}")
+            return None

@@ -39,7 +39,6 @@ class Add_lesson(QDialog):
             for types in range(len(query_data)):
                 print(query_data[types], type(query_data[types]))
 
-
             # ______________________________________
             with self.connection.cursor() as cursor:
                 cursor.execute(
