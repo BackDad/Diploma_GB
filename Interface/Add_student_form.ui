@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
-    <height>315</height>
+    <width>556</width>
+    <height>446</height>
    </rect>
   </property>
   <property name="font">
@@ -27,259 +27,440 @@ QTabWidget::pane {
     background-color: #FFDAB9;
 }</string>
   </property>
-  <widget class="QLabel" name="Error_lable">
-   <property name="geometry">
-    <rect>
-     <x>9</x>
-     <y>397</y>
-     <width>16</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Palatino Linotype</family>
-     <pointsize>18</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(0, 0, 0);
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QLabel" name="Name_label">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>13</y>
-     <width>359</width>
-     <height>268</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="0">
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="Name_label">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
+         </property>
+         <property name="text">
+          <string>Имя</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Target_label">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-        </property>
-        <property name="text">
-         <string>Имя</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="Target_label">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
+         </property>
+         <property name="text">
+          <string>Цель</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Contact_label">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-        </property>
-        <property name="text">
-         <string>Цель</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="Contact_label">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
+         </property>
+         <property name="text">
+          <string>Контакты</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Cost_label">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-        </property>
-        <property name="text">
-         <string>Контакты</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="Cost_label">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
+         </property>
+         <property name="text">
+          <string>Стоимость</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Date_label">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-        </property>
-        <property name="text">
-         <string>Стоимость</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="Date_label">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(0, 0, 0);
+         </property>
+         <property name="text">
+          <string>Дата начала</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Date_label_3">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-        </property>
-        <property name="text">
-         <string>Дата начала</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="0" column="1">
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLineEdit" name="Name">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Date_label_5">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
+         </property>
+         <property name="text">
+          <string>Первый день</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Date_label_4">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="Date_label_2">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
+         </property>
+         <property name="text">
+          <string>Второй день</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="0" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLineEdit" name="Name">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: #D3D3D3;
     border: 2px solid #00CED1;
     border-radius: 5px;
 }
 </string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Target">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Target">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: #D3D3D3;
     border: 2px solid #00CED1;
     border-radius: 5px;
 }
 </string>
-        </property>
-        <property name="text">
-         <string>Просто</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Contact">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
+         </property>
+         <property name="text">
+          <string>Просто</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Contact">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: #D3D3D3;
     border: 2px solid #00CED1;
     border-radius: 5px;
 }
 </string>
-        </property>
-        <property name="text">
-         <string>+79601253072</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Cost">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
+         </property>
+         <property name="text">
+          <string>+79601253072</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Cost">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: #D3D3D3;
     border: 2px solid #00CED1;
     border-radius: 5px;
 }
 </string>
-        </property>
-        <property name="text">
-         <string>1000</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Date">
-        <property name="font">
-         <font>
-          <family>Palatino Linotype</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
+         </property>
+         <property name="text">
+          <string>1000</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="Date">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QLineEdit {
     background-color: #D3D3D3;
     border: 2px solid #00CED1;
     border-radius: 5px;
 }
 </string>
-        </property>
-        <property name="text">
-         <string>2023-07-04</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="0">
-     <widget class="QPushButton" name="Save_button">
-      <property name="font">
-       <font>
-        <family>Palatino Linotype</family>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
+         </property>
+         <property name="text">
+          <string>2023-07-04</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="WeekDaybox1">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>ПН</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ВТ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>СР</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ЧТ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ПТ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>СБ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ВС</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTimeEdit" name="FirstDayTime">
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTimeEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="check2">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>2 раза в неделю?</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="WeekDaybox2">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>ПН</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ВТ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>СР</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ЧТ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ПТ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>СБ</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ВС</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QTimeEdit" name="SecondDayTime">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>18</pointsize>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QTimeEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="1" column="0">
+      <widget class="QPushButton" name="Save_button">
+       <property name="font">
+        <font>
+         <family>Palatino Linotype</family>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
 QPushButton {
     border-style: outset;
     border-width: 2px;
@@ -296,14 +477,32 @@ QPushButton:pressed {
     background-color: #FF7518;
 }
 </string>
-      </property>
-      <property name="text">
-       <string>Сохранить</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+       </property>
+       <property name="text">
+        <string>Сохранить</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="Error_lable">
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgba(255, 255, 255, 0);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>

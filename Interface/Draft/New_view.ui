@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1292</width>
+    <width>1299</width>
     <height>842</height>
    </rect>
   </property>
@@ -76,7 +76,11 @@
   </property>
   <property name="font">
    <font>
-    <family>MS Sans Serif</family>
+    <family>Palatino Linotype</family>
+    <pointsize>14</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
    </font>
   </property>
   <property name="acceptDrops">
@@ -89,12 +93,12 @@
    <enum>Qt::LeftToRight</enum>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">font: 14pt &quot;Palatino Linotype&quot;;</string>
   </property>
   <property name="inputMethodHints">
    <set>Qt::ImhNone</set>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout_2">
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="sizePolicy">
@@ -112,17 +116,28 @@
      <property name="font">
       <font>
        <family>Palatino Linotype</family>
-       <pointsize>18</pointsize>
+       <pointsize>14</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(255, 218, 185);
-alternate-background-color: rgb(170, 255, 127);
-selection-color: rgb(255, 160, 122);
-border-color: rgb(255, 201, 165);
-QTabWidget::pane {
-    background-color: #FFDAB9;
-}</string>
+      <string notr="true">QTabBar::tab {
+        border-radius: 25px;
+        padding: 15px;
+        margin-right: 4px;
+    }
+    
+    QTabBar::tab:selected {
+        background-color: #25F7F2;
+    }
+    
+    QTabWidget::pane {
+        border-radius: 1px;
+        padding: 4px;
+}
+</string>
      </property>
      <property name="tabPosition">
       <enum>QTabWidget::North</enum>
@@ -131,7 +146,7 @@ QTabWidget::pane {
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>1</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
@@ -158,28 +173,32 @@ QTabWidget::pane {
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>9</x>
-         <y>9</y>
-         <width>444</width>
-         <height>29</height>
+         <x>11</x>
+         <y>11</y>
+         <width>346</width>
+         <height>26</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
-        <string>Следующие запланированные занятия:</string>
+        <string>Занятия сегодня :</string>
        </property>
       </widget>
       <widget class="QCalendarWidget" name="calendarWidget">
        <property name="geometry">
         <rect>
-         <x>660</x>
-         <y>350</y>
-         <width>411</width>
-         <height>351</height>
+         <x>910</x>
+         <y>30</y>
+         <width>304</width>
+         <height>270</height>
         </rect>
        </property>
        <property name="maximumSize">
@@ -190,26 +209,47 @@ QTabWidget::pane {
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
       </widget>
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>9</x>
-         <y>273</y>
-         <width>624</width>
-         <height>29</height>
+         <x>10</x>
+         <y>470</y>
+         <width>489</width>
+         <height>26</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
         <string>Общая информация о расписании на текущую неделю:</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="lesson_lable">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>60</y>
+         <width>581</width>
+         <height>201</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>TextLabel</string>
        </property>
       </widget>
      </widget>
@@ -218,12 +258,50 @@ QTabWidget::pane {
        <string>Ученики</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
-       <item row="1" column="1">
-        <widget class="QPushButton" name="Show_Student_All">
+       <item row="0" column="1">
+        <widget class="QLabel" name="Time_lable">
          <property name="font">
           <font>
            <family>Palatino Linotype</family>
-           <pointsize>18</pointsize>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+         <property name="lineWidth">
+          <number>0</number>
+         </property>
+         <property name="midLineWidth">
+          <number>0</number>
+         </property>
+         <property name="text">
+          <string>ЧАСЫ</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPushButton" name="Add_student">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+           <kerning>false</kerning>
           </font>
          </property>
          <property name="styleSheet">
@@ -246,16 +324,82 @@ QPushButton:pressed {
 </string>
          </property>
          <property name="text">
-          <string>Обновить</string>
+          <string>Добавить</string>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
+       <item row="1" column="0" colspan="3">
+        <widget class="QTableView" name="tableView">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Palatino Linotype&quot;;
+QTableView{
+ border: 0px solid #FFFFFF;
+
+
+}</string>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::DragDrop</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>false</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ContiguousSelection</enum>
+         </property>
+         <property name="showGrid">
+          <bool>true</bool>
+         </property>
+         <property name="gridStyle">
+          <enum>Qt::DashDotDotLine</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+        </widget>
+       </item>
+       <item row="2" column="2">
         <widget class="QPushButton" name="Del_Student">
          <property name="font">
           <font>
            <family>Palatino Linotype</family>
-           <pointsize>18</pointsize>
+           <pointsize>14</pointsize>
           </font>
          </property>
          <property name="styleSheet">
@@ -282,48 +426,10 @@ QPushButton:pressed {
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="Add_student">
-         <property name="font">
-          <font>
-           <family>Palatino Linotype</family>
-           <pointsize>18</pointsize>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">
-QPushButton {
-    border-style: outset;
-    border-width: 2px;
-    border-color: gray;
-    padding: 4px;
-	background-color: rgb(255, 209, 187);
-	border-radius: 10px;
-
-
-}
-
-QPushButton:pressed {
-    border-style: inset;
-    background-color: #FF7518;
-}
-</string>
-         </property>
+       <item row="3" column="0">
+        <widget class="QLabel" name="Erro_lable">
          <property name="text">
-          <string>Добавить</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" colspan="3">
-        <widget class="QTableView" name="tableView">
-         <property name="font">
-          <font>
-           <family>Palatino Linotype</family>
-           <pointsize>18</pointsize>
-          </font>
-         </property>
-         <property name="selectionMode">
-          <enum>QAbstractItemView::ContiguousSelection</enum>
+          <string>TextLabel</string>
          </property>
         </widget>
        </item>
@@ -345,7 +451,10 @@ QPushButton:pressed {
        <property name="font">
         <font>
          <family>Palatino Linotype</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -364,7 +473,10 @@ QPushButton:pressed {
        <property name="font">
         <font>
          <family>Palatino Linotype</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
@@ -407,7 +519,10 @@ QPushButton:pressed {
        <property name="font">
         <font>
          <family>Palatino Linotype</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -426,7 +541,10 @@ QPushButton:pressed {
        <property name="font">
         <font>
          <family>Palatino Linotype</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -450,7 +568,10 @@ QPushButton:pressed {
        <property name="font">
         <font>
          <family>Palatino Linotype</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
@@ -475,7 +596,10 @@ QPushButton:pressed {
        <property name="font">
         <font>
          <family>Palatino Linotype</family>
-         <pointsize>18</pointsize>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
         </font>
        </property>
        <property name="text">
