@@ -122,6 +122,9 @@
        <bold>false</bold>
       </font>
      </property>
+     <property name="contextMenuPolicy">
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">QTabBar::tab {
         border-radius: 25px;
@@ -146,7 +149,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>6</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
@@ -360,8 +363,11 @@ QTableView{
          <property name="editTriggers">
           <set>QAbstractItemView::NoEditTriggers</set>
          </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
          <property name="dragDropMode">
-          <enum>QAbstractItemView::DragDrop</enum>
+          <enum>QAbstractItemView::InternalMove</enum>
          </property>
          <property name="alternatingRowColors">
           <bool>false</bool>
