@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>327</width>
-    <height>449</height>
+    <height>491</height>
    </rect>
   </property>
   <property name="font">
@@ -26,7 +26,7 @@
     <rect>
      <x>9</x>
      <y>433</y>
-     <width>16</width>
+     <width>301</width>
      <height>32</height>
     </rect>
    </property>
@@ -83,7 +83,7 @@ QPushButton:pressed {
     <string>Сохранить</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>11</x>
@@ -321,7 +321,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>11</x>
