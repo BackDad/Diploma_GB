@@ -21,6 +21,7 @@ class CustomException(Exception):
 class MainWindow(QMainWindow):
     def __init__(self, connection):
         super().__init__()
+        self.bill_form = None
         self.results = None
         self.add_lesson_w = None
         self.connection = connection
@@ -47,11 +48,13 @@ class MainWindow(QMainWindow):
         self.timer.start(1000)
         self.delete_dialog = DeleteDialog(self.connection)
         self.delete_dialog.data_updated.connect(self.show_all_students)
+        self.delete_dialog.data_updated.connect(self.show_current_lessons)
         self.add_student_form = AddStudentForm(self.connection)
         self.add_student_form.data_updated.connect(self.show_all_students)
         self.add_student_form.data_updated.connect(self.show_current_lessons)
-        self.delete_dialog.data_updated.connect(self.show_current_lessons)
         self.bill_form = billForm(self.connection)
+        self.bill_form.list_of_student()
+        self.bill_form.studentSelected.connect(self.bill_form.list_of_lessons)
 
         if self.Tconnection():
             self.show_all_students()
