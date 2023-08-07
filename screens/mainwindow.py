@@ -4,6 +4,7 @@ from PyQt5.uic import loadUi
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
 from screens.StudentFileInfo import StudentInfoDialog
+from screens.billForm import billForm
 from screens.add_lesson import Add_lesson
 from datetime import datetime
 from PyQt5.QtCore import QTimer, QTime
@@ -34,6 +35,7 @@ class MainWindow(QMainWindow):
         self.Show_Student_Active.clicked.connect(self.add_lesson)
         self.Del_Student.clicked.connect(self.open_delete_dialog)
         self.tableView.clicked.connect(self.show_student_info)
+        self.Add_bill.clicked.connect(self.open_bill_form)
         self.show_current_lessons()
         self.model = QStandardItemModel()
         self.tableView.setModel(self.model)
@@ -47,9 +49,10 @@ class MainWindow(QMainWindow):
         self.delete_dialog.data_updated.connect(self.show_all_students)
         self.add_student_form = AddStudentForm(self.connection)
         self.add_student_form.data_updated.connect(self.show_all_students)
-
         self.add_student_form.data_updated.connect(self.show_current_lessons)
         self.delete_dialog.data_updated.connect(self.show_current_lessons)
+        self.bill_form = billForm(self.connection)
+
         if self.Tconnection():
             self.show_all_students()
 
@@ -89,6 +92,9 @@ class MainWindow(QMainWindow):
         else:
             print(f"База данных пуста {updTime()}")
             self.Erro_lable.setText(f"База данных пуста {updTime()}")
+
+    def open_bill_form(self):
+        self.bill_form.show()
 
     def show_student_info(self, index):
         # Получаем данные об ученике из модели
@@ -141,9 +147,8 @@ class MainWindow(QMainWindow):
                 WHERE (first_day = %s AND first_day_time>=%s) 
                 OR 
                 (second_day = %s AND second_day_time>=%s)
-                 ''',(self.lesson_lable.text(),current_time,self.lesson_lable.text(),current_time,))
+                 ''', (self.lesson_lable.text(), current_time, self.lesson_lable.text(), current_time,))
             result = cursor.fetchall()
-            temp_str = ''
             temp_s = ''
             for item in result:
                 temp_str = item['firstname'] + ' ' + item['target'] + ' ' + str(item['first_day_time']) + '\n'
