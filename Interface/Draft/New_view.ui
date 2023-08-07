@@ -249,7 +249,7 @@
         </rect>
        </property>
        <property name="text">
-        <string>TextLabel</string>
+        <string>Текущее занятие</string>
        </property>
       </widget>
      </widget>
@@ -311,7 +311,8 @@ QPushButton {
     border-width: 2px;
     border-color: gray;
     padding: 4px;
-	background-color: rgb(255, 209, 187);
+
+        background-color: rgb(118, 176, 207);
 	border-radius: 10px;
 
 
@@ -319,7 +320,7 @@ QPushButton {
 
 QPushButton:pressed {
     border-style: inset;
-    background-color: #FF7518;
+     background-color: #25F7A2;
 }
 </string>
          </property>
@@ -409,7 +410,8 @@ QPushButton {
     border-width: 2px;
     border-color: gray;
     padding: 4px;
-	background-color: rgb(255, 209, 187);
+
+        background-color: rgb(118, 176, 207);
 	border-radius: 10px;
 
 
@@ -417,7 +419,7 @@ QPushButton {
 
 QPushButton:pressed {
     border-style: inset;
-    background-color: #FF7518;
+     background-color: #25F7A2;
 }
 </string>
          </property>
@@ -486,7 +488,8 @@ QPushButton {
     border-width: 2px;
     border-color: gray;
     padding: 4px;
-	background-color: rgb(255, 209, 187);
+
+        background-color: #25F7F2;
 	border-radius: 10px;
 
 
@@ -494,7 +497,7 @@ QPushButton {
 
 QPushButton:pressed {
     border-style: inset;
-    background-color: #FF7518;
+     background-color: #25F7A2;
 }
 </string>
        </property>
@@ -549,6 +552,48 @@ QPushButton:pressed {
        </property>
        <property name="text">
         <string>Кнопка &quot;Добавить платеж&quot; для фиксирования нового платежа.</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="Add_bill">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>530</y>
+         <width>441</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: rgb(118, 176, 207);
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Добавить платеж</string>
        </property>
       </widget>
      </widget>
