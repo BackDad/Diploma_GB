@@ -1,11 +1,16 @@
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
 from datetime import datetime
+from PyQt5.QtCore import pyqtSignal
+from screens.billForm import billForm
 
 
 class Add_lesson(QDialog):
-    def __init__(self, connection):
+    data_updated = pyqtSignal()
+
+    def __init__(self, connection, bill_Form):
         super().__init__()
+        self.bill_From = bill_Form
         self.list_tuple = None
         self.result = None
         self.connection = connection
@@ -19,7 +24,6 @@ class Add_lesson(QDialog):
             results = cursor.fetchall()
             self.result = results
             print(results)
-
             self.list_of_students.addItems([items['firstname'] for items in results])
             self.list_tuple = [[items['firstname'], items['id'], items['cost']] for items in results]
             print(self.list_tuple)
@@ -52,5 +56,7 @@ class Add_lesson(QDialog):
                      query_data[3]))
                 self.connection.commit()
                 print("Успешно!")
+                self.data_updated.emit()
+                self.bill_From.update_lists()
         except Exception as ex:
             print("Error", ex)

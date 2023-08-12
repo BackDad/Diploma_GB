@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5.QtWidgets import QMainWindow, QTableView, QHeaderView, QListView
+from PyQt5.QtWidgets import QMainWindow, QTableView, QHeaderView, QListView, QStyledItemDelegate, QStyleOptionViewItem
 from PyQt5.uic import loadUi
 from screens.deletedialog import DeleteDialog
 from screens.addstudentform import AddStudentForm
@@ -7,7 +7,7 @@ from screens.StudentFileInfo import StudentInfoDialog
 from screens.billForm import billForm
 from screens.add_lesson import Add_lesson
 from datetime import datetime
-from PyQt5.QtCore import QTimer, QTime
+from PyQt5.QtCore import QTimer, QTime, Qt
 
 
 class CustomException(Exception):
@@ -39,10 +39,22 @@ class MainWindow(QMainWindow):
         self.Add_bill.clicked.connect(self.open_bill_form)
         self.show_current_lessons()
         self.model = QStandardItemModel()
+        self.model_dolg = QStandardItemModel()
+        self.model_all_without = QStandardItemModel()
+
         self.tableView.setModel(self.model)
+        self.tableView_2.setModel(self.model_dolg)
+        self.model_dolg.dataChanged.connect(self.updateCellText)
+
+        self.tableView_4.setModel(self.model_all_without)
+
         self.headers = ['ID', 'Ученик', 'Номер \n телефона', 'Гонорар', 'Цель', 'Дата \n начала', 'Первый \n день',
                         'Время \n первого \n  занятия',
                         'Второй \n день', 'Время \n второго \n занятия']
+
+        self.headers_2 = ['ID', 'Ученик', 'Стоимость', 'Тема занятия', 'Дата занятия', 'Статус оплаты']
+        self.headers_w = ['ID', 'Имя', 'Цель']
+
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.update_time)
         self.timer.start(1000)
@@ -51,15 +63,24 @@ class MainWindow(QMainWindow):
         self.delete_dialog.data_updated.connect(self.show_current_lessons)
         self.add_student_form = AddStudentForm(self.connection)
         self.add_student_form.data_updated.connect(self.show_all_students)
+        self.add_student_form.data_updated.connect(self.show_students)
         self.add_student_form.data_updated.connect(self.show_current_lessons)
         self.bill_form = billForm(self.connection)
         self.bill_form.list_of_student()
         self.bill_form.studentSelected.connect(self.bill_form.list_of_lessons)
 
+        self.bill_form.data_updated.connect(self.show_dolgu)
+        self.add_lesson_w = Add_lesson(self.connection, self.bill_form)
+        self.add_lesson_w.data_updated.connect(self.show_dolgu)
+
         if self.Tconnection():
             self.show_all_students()
 
+        self.show_dolgu()
+        self.show_students()
+
     def open_add_student_form(self):
+
         self.add_student_form.show()
 
     def show_all_students(self):
@@ -115,7 +136,6 @@ class MainWindow(QMainWindow):
 
     def add_lesson(self):
         try:
-            self.add_lesson_w = Add_lesson(self.connection)
             self.add_lesson_w.show()
         except Exception as ex:
             print(ex)
@@ -157,6 +177,80 @@ class MainWindow(QMainWindow):
                 temp_str = item['firstname'] + ' ' + item['target'] + ' ' + str(item['first_day_time']) + '\n'
                 temp_s += temp_str
             self.lesson_lable.setText(temp_s)
+
+    def show_dolgu(self):
+
+        with self.connection.cursor() as cursor:
+            # cursor.execute( 'SELECT students.id, students.firstname,students.cost FROM students JOIN lessons ON
+            # students.id = lessons.students_id WHERE lessons.payment_bool = 0')
+            cursor.execute(
+                'SELECT students.id, students.firstname,students.cost,lessons.lesson_topic, lessons.lesson_date,lessons.payment_bool FROM students INNER JOIN lessons ON students.id = lessons.students_id')
+            results = cursor.fetchall()
+            print(results)
+            if self.results:
+                try:
+                    self.model_dolg.clear()  # Устанавливаем количество строк и столбцов в модели
+                    self.model_dolg.setRowCount(len(results))
+                    self.model_dolg.setColumnCount(
+                        len(results[0]))  # Предполагается, что все записи имеют одинаковое количество столбцов
+                    # Заполняем модель данными из результатов запроса
+                    for row, result in enumerate(results):
+                        for column, (key, value) in enumerate(result.items()):
+                            item = QStandardItem(str(value))
+                            self.model_dolg.setItem(row, column, item)
+                        # Устанавливаем заголовки столбцов
+                        # column_names = list(self.results[0].keys())
+                        self.model_dolg.setHorizontalHeaderLabels(self.headers_2)
+                        # Разрешаем изменение размеров столбцов и
+                        # выделение целых строк
+                        self.tableView_2.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+                        self.tableView_2.setSelectionBehavior(QTableView.SelectRows)
+                        # self. Erro_lable_2.setText(f"Обновлено {updTime()} ")
+                except Exception as ex:
+                    print(ex)
+
+    def show_students(self):
+
+        with self.connection.cursor() as cursor:
+            cursor.execute('SELECT id, firstname, target FROM students ')
+        results = cursor.fetchall()
+        if results:
+            self.model_all_without.clear()
+            # Устанавливаем количество строк и столбцов в модели
+            self.model_all_without.setRowCount(len(results))
+            self.model_all_without.setColumnCount(
+                len(results[0]))  # Предполагается, что все записи имеют одинаковое количество столбцов
+
+            # Заполняем модель данными из результатов запроса
+            for row, result in enumerate(results):
+                for column, (key, value) in enumerate(result.items()):
+                    item = QStandardItem(str(value))
+                    self.model_all_without.setItem(row, column, item)
+            # Устанавливаем заголовки столбцов
+            # column_names = list(self.results[0].keys())
+            self.model_all_without.setHorizontalHeaderLabels(self.headers_w)  # Разрешаем изменение размеров столбцов и
+            # выделение целых строк
+            self.tableView_4.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
+            self.tableView_4.setSelectionBehavior(QTableView.SelectRows)
+            # self.Erro_lable.setText(f"Обновлено {updTime()} ")
+
+        # else:
+        # self.model.clear()
+        # self.Erro_lable.setText(f"База данных пуста {updTime()}")
+
+    def updateCellText(self, topLeftIndex, bottomRightIndex):
+        for row in range(topLeftIndex.row(), bottomRightIndex.row() + 1):
+            for col in range(topLeftIndex.column(), bottomRightIndex.column() + 1):
+                index = self.model_dolg.index(row, col)
+                value = self.model_dolg.data(index, Qt.DisplayRole)
+                if value == "0":
+                    self.model_dolg.setData(index, "Не оплачено", Qt.DisplayRole)
+                    self.model_dolg.setData(index, '#FFF023', Qt.TextColorRole)
+                    self.model_dolg.setData(index, Qt.red, Qt.BackgroundRole)
+                elif value == '1':
+                    self.model_dolg.setData(index, "Оплачено", Qt.DisplayRole)
+                    self.model_dolg.setData(index, Qt.green, Qt.TextColorRole)
+                    self.model_dolg.setData(index, Qt.red, Qt.BackgroundRole)
 
 
 def updTime():

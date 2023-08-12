@@ -98,7 +98,7 @@
   <property name="inputMethodHints">
    <set>Qt::ImhNone</set>
   </property>
-  <layout class="QGridLayout" name="gridLayout_2">
+  <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="sizePolicy">
@@ -149,7 +149,7 @@
       <enum>QTabWidget::Rounded</enum>
      </property>
      <property name="currentIndex">
-      <number>6</number>
+      <number>0</number>
      </property>
      <property name="elideMode">
       <enum>Qt::ElideNone</enum>
@@ -258,7 +258,7 @@
      </widget>
      <widget class="QWidget" name="tab_4">
       <attribute name="title">
-       <string>Ученики</string>
+       <string>Обучающиеся</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout_4">
        <item row="0" column="1">
@@ -443,143 +443,106 @@ QPushButton:pressed {
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_7">
-      <attribute name="title">
-       <string>Расписание</string>
-      </attribute>
-      <widget class="QLabel" name="label_6">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>811</width>
-         <height>381</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Palatino Linotype</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Календарь с отображением доступных временных слотов и запланированных занятий.</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="Show_Student_Active">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>640</y>
-         <width>441</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Palatino Linotype</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">
-QPushButton {
-    border-style: outset;
-    border-width: 2px;
-    border-color: gray;
-    padding: 4px;
-
-        background-color: #25F7F2;
-	border-radius: 10px;
-
-
-}
-
-QPushButton:pressed {
-    border-style: inset;
-     background-color: #25F7A2;
-}
-</string>
-       </property>
-       <property name="text">
-        <string>Провести занятие</string>
-       </property>
-      </widget>
-     </widget>
      <widget class="QWidget" name="tab_8">
       <attribute name="title">
        <string>Финансы</string>
       </attribute>
-      <widget class="QLabel" name="label_8">
-       <property name="geometry">
-        <rect>
-         <x>40</x>
-         <y>10</y>
-         <width>781</width>
-         <height>301</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Palatino Linotype</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Таблица с записями о платежах от учеников и статусом задолженностей.</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_9">
-       <property name="geometry">
-        <rect>
-         <x>50</x>
-         <y>260</y>
-         <width>761</width>
-         <height>171</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Palatino Linotype</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>Кнопка &quot;Добавить платеж&quot; для фиксирования нового платежа.</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="Add_bill">
-       <property name="geometry">
-        <rect>
-         <x>80</x>
-         <y>530</y>
-         <width>441</width>
-         <height>81</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Palatino Linotype</family>
-         <pointsize>14</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0" rowspan="2" colspan="2">
+        <widget class="QLabel" name="label_8">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>Таблица с записями о платежах от учеников и статусом задолженностей.</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QTableView" name="tableView_2">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="autoFillBackground">
+          <bool>true</bool>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Palatino Linotype&quot;;
+QTableView{
+ border: 0px solid #FFFFFF;
+
+
+}</string>
+         </property>
+         <property name="sizeAdjustPolicy">
+          <enum>QAbstractScrollArea::AdjustToContents</enum>
+         </property>
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="dragEnabled">
+          <bool>true</bool>
+         </property>
+         <property name="dragDropMode">
+          <enum>QAbstractItemView::InternalMove</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>false</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::ContiguousSelection</enum>
+         </property>
+         <property name="showGrid">
+          <bool>true</bool>
+         </property>
+         <property name="gridStyle">
+          <enum>Qt::DashDotDotLine</enum>
+         </property>
+         <property name="sortingEnabled">
+          <bool>true</bool>
+         </property>
+         <attribute name="horizontalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderCascadingSectionResizes">
+          <bool>true</bool>
+         </attribute>
+        </widget>
+       </item>
+       <item row="2" column="0" colspan="2">
+        <widget class="QPushButton" name="Add_bill">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
 QPushButton {
     border-style: outset;
     border-width: 2px;
@@ -597,11 +560,99 @@ QPushButton:pressed {
      background-color: #25F7A2;
 }
 </string>
-       </property>
-       <property name="text">
-        <string>Добавить платеж</string>
-       </property>
-      </widget>
+         </property>
+         <property name="text">
+          <string>Добавить платеж</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab_7">
+      <attribute name="title">
+       <string>Занятия</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_5">
+       <item row="0" column="1">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="1" column="3">
+            <widget class="QTableView" name="tableView_4"/>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <family>Palatino Linotype</family>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Ученик</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QTableView" name="tableView_3"/>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_6">
+             <property name="font">
+              <font>
+               <family>Palatino Linotype</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Пройденные темы</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="Show_Student_Active">
+         <property name="font">
+          <font>
+           <family>Palatino Linotype</family>
+           <pointsize>14</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
+         </property>
+         <property name="text">
+          <string>Провести занятие</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </widget>
      <widget class="QWidget" name="tab_9">
       <attribute name="title">

@@ -70,7 +70,7 @@ QPushButton:pressed {
     <string/>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -109,6 +109,9 @@ QPushButton:pressed {
 }
 </string>
       </property>
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
       <property name="frame">
        <bool>false</bool>
       </property>
@@ -145,6 +148,9 @@ QPushButton:pressed {
     border-radius: 5px;
 }
 </string>
+      </property>
+      <property name="currentIndex">
+       <number>-1</number>
       </property>
       <property name="frame">
        <bool>false</bool>

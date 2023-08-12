@@ -31,14 +31,14 @@
   <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>21</x>
-     <y>10</y>
+     <x>22</x>
+     <y>11</y>
      <width>254</width>
-     <height>289</height>
+     <height>291</height>
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0" colspan="2">
+    <item row="0" column="0">
      <widget class="QLabel" name="label_2">
       <property name="font">
        <font>
@@ -54,7 +54,7 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="0" colspan="3">
+    <item row="1" column="0">
      <layout class="QGridLayout" name="gridLayout">
       <item row="0" column="1" colspan="2">
        <widget class="QLineEdit" name="Host_name">
@@ -254,7 +254,7 @@
       </item>
      </layout>
     </item>
-    <item row="2" column="0" colspan="3">
+    <item row="2" column="0">
      <widget class="QPushButton" name="Connect_to_db">
       <property name="font">
        <font>
@@ -297,38 +297,51 @@ QPushButton:pressed {
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLabel" name="Error_lable">
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QLabel" name="label_6">
-      <property name="font">
-       <font>
-        <family>Palatino Linotype</family>
-        <pointsize>14</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>../pic.png</pixmap>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="Error_lable">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="lineWidth">
+         <number>1</number>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="textFormat">
+         <enum>Qt::RichText</enum>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="font">
+         <font>
+          <family>Palatino Linotype</family>
+          <pointsize>14</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>../pic.png</pixmap>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
