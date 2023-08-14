@@ -194,7 +194,8 @@ class MainWindow(QMainWindow):
             # cursor.execute( 'SELECT students.id, students.firstname,students.cost FROM students JOIN lessons ON
             # students.id = lessons.students_id WHERE lessons.payment_bool = 0')
             cursor.execute(
-                'SELECT students.firstname, lessons.lesson_topic, lessons.lesson_date,lessons.payment_bool FROM students INNER JOIN lessons ON students.id = lessons.students_id')
+                'SELECT students.firstname, lessons.lesson_topic, lessons.lesson_date,lessons.payment_bool FROM '
+                'students INNER JOIN lessons ON students.id = lessons.students_id')
             results = cursor.fetchall()
             print(results)
             if self.results:
