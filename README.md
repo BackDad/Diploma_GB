@@ -1,3 +1,5 @@
+![](https://github.com/BackDad/Diploma_GB/blob/master/pic.png)
+
 # Тема проекта: Разработка CRM системы для работы репетитора 
 ## Введение
 
