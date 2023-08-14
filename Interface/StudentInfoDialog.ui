@@ -26,14 +26,15 @@
    <string>Profile</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.555 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));
-border-top-color: rgb(0, 0, 0);</string>
+   <string notr="true">
+</string>
   </property>
   <layout class="QFormLayout" name="formLayout">
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -44,9 +45,24 @@ border-top-color: rgb(0, 0, 0);</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);
-color: rgb(0, 0, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string>Имя</string>
@@ -66,13 +82,29 @@ color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="name_l">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-background-color: rgba(255, 255, 255, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string/>
@@ -92,6 +124,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLabel" name="label_2">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -102,9 +135,24 @@ background-color: rgba(255, 255, 255, 0);</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);
-color: rgb(0, 0, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string>Цель</string>
@@ -124,13 +172,29 @@ color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="target_l">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-background-color: rgba(255, 255, 255, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="frameShadow">
       <enum>QFrame::Raised</enum>
@@ -153,6 +217,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLabel" name="label_3">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -163,9 +228,24 @@ background-color: rgba(255, 255, 255, 0);</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);
-color: rgb(0, 0, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string>Контакты</string>
@@ -185,13 +265,29 @@ color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="contact_l">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-background-color: rgba(255, 255, 255, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string/>
@@ -211,6 +307,7 @@ background-color: rgba(255, 255, 255, 0);</string>
     <widget class="QLabel" name="label_4">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -221,9 +318,24 @@ background-color: rgba(255, 255, 255, 0);</string>
       <bool>false</bool>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);
-color: rgb(0, 0, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string>Стоимость</string>
@@ -243,13 +355,29 @@ color: rgb(0, 0, 0);</string>
     <widget class="QLabel" name="cost_l">
      <property name="font">
       <font>
+       <family>Palatino Linotype</family>
        <pointsize>14</pointsize>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
-color: rgb(0, 0, 0);
-background-color: rgba(255, 255, 255, 0);</string>
+      <string notr="true">
+QPushButton {
+    border-style: outset;
+    border-width: 2px;
+    border-color: gray;
+    padding: 4px;
+
+        background-color: #25F7F2;
+	border-radius: 10px;
+
+
+}
+
+QPushButton:pressed {
+    border-style: inset;
+     background-color: #25F7A2;
+}
+</string>
      </property>
      <property name="text">
       <string/>
@@ -267,15 +395,21 @@ background-color: rgba(255, 255, 255, 0);</string>
    </item>
    <item row="4" column="1">
     <widget class="QPushButton" name="Ok_b">
+     <property name="font">
+      <font>
+       <family>Palatino Linotype</family>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">
 QPushButton {
-	color: rgb(0, 0, 0);
     border-style: outset;
     border-width: 2px;
     border-color: gray;
     padding: 4px;
-	background-color: rgb(141, 206, 180);
+
+        background-color: #25F7F2;
 	border-radius: 10px;
 
 
@@ -283,7 +417,7 @@ QPushButton {
 
 QPushButton:pressed {
     border-style: inset;
-    background-color: #c0c0c0;
+     background-color: #25F7A2;
 }
 </string>
      </property>

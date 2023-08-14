@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
+    <width>378</width>
     <height>300</height>
    </rect>
   </property>
@@ -14,62 +14,75 @@
    <string>Удаление записи</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-background-color: qlineargradient(spread:pad, x1:0.483, y1:0, x2:0.483, y2:1, stop:0.875 rgba(73, 73, 73, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="layoutDirection">
-      <enum>Qt::LeftToRight</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(255, 255, 255);
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(0, 0, 0);
 background-color: rgba(255, 255, 255, 0);</string>
-     </property>
-     <property name="text">
-      <string>Удалить</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="Delete_row">
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: qlineargradient(spread:pad, x1:0.573864, y1:0.006, x2:0.551, y2:0.988636, stop:0.375 rgba(141, 206, 180, 255), stop:1 rgba(255, 255, 255, 255));</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="Delete_button">
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>14</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
+       </property>
+       <property name="text">
+        <string>Введите ID записи</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="Delete_row">
+       <property name="font">
+        <font>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit {
+    background-color: #D3D3D3;
+    border: 2px solid #00CED1;
+    border-radius: 5px;
+}
+</string>
+       </property>
+       <property name="dragEnabled">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Delete_button">
+       <property name="font">
+        <font>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
 QPushButton {
     border-style: outset;
     border-width: 2px;
     border-color: gray;
     padding: 4px;
-	background-color: rgb(141, 206, 180);
+
+        background-color: #25F7F2;
 	border-radius: 10px;
 
 
@@ -77,43 +90,35 @@ QPushButton {
 
 QPushButton:pressed {
     border-style: inset;
-    background-color: #c0c0c0;
+     background-color: #25F7A2;
 }
 </string>
-     </property>
-     <property name="text">
-      <string>удалить запись</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item>
-    <widget class="QLabel" name="Delete_error">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>5</height>
-      </size>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
+       </property>
+       <property name="text">
+        <string>удалить запись</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="Delete_error">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>5</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>Palatino Linotype</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
