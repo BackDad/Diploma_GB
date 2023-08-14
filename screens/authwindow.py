@@ -1,6 +1,4 @@
 import pymysql
-# from config.config import host as default_host, user as default_user, password as default_password, \
-#     db_name as default_db_name
 from PyQt5.QtWidgets import QDialog
 from PyQt5.uic import loadUi
 
@@ -11,8 +9,10 @@ class AuthWindow(QDialog):
         loadUi('Interface/Auth.ui', self)
 
         self.connection = None
+
         self.Connect_to_db.clicked.connect(self.auth)
         self.Error_lable.setText('Приветствую!')
+
 
     def auth(self):
         host = self.Host_name.text()
@@ -30,6 +30,7 @@ class AuthWindow(QDialog):
     def show_error(self, message):
         # Отображение сообщения об ошибке пользователю
         pass
+
 
     def connect_to_database(self, host, user, password, db_name):
         try:

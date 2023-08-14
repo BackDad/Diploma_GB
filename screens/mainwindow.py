@@ -28,11 +28,12 @@ class MainWindow(QMainWindow):
         self.connection = connection
         self.profile = None
         self.delete_dialog = None
-        self.auth_form = None
         self.add_student_form = None
         self.student_data = None
+
         loadUi('Interface/Draft/New_view.ui', self)
         # self.Show_Student_All.clicked.connect(self.show_all_students) удалена
+
         self.Add_student.clicked.connect(self.open_add_student_form)
         self.Show_Student_Active.clicked.connect(self.add_lesson)
         self.Del_Student.clicked.connect(self.open_delete_dialog)
@@ -93,6 +94,7 @@ class MainWindow(QMainWindow):
 
         self.results = self.Tconnection()
         if self.results:
+
             self.model.clear()
             # Устанавливаем количество строк и столбцов в модели
             self.model.setRowCount(len(self.results))
@@ -140,7 +142,7 @@ class MainWindow(QMainWindow):
         }
         self.profile = StudentInfoDialog(student_data)
         self.profile.show()
-
+        
     # TODO: Убрать try exept
     def add_lesson(self):
         try:
