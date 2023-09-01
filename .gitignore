@@ -3,3 +3,5 @@ config/config.py
 __pycache__/
 .idea
 /venv
+Лого.png
+TASK.md
