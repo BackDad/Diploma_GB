@@ -6,6 +6,7 @@ from screens.addstudentform import AddStudentForm
 from screens.StudentFileInfo import StudentInfoDialog
 from screens.billForm import billForm
 from screens.add_lesson import Add_lesson
+from screens.updatestudentform import UpdateStudentForm
 from datetime import datetime
 from PyQt5.QtCore import QTimer, QTime, Qt
 from PyQt5.QtGui import QColor
@@ -47,6 +48,7 @@ class MainWindow(QMainWindow):
         self.tableView.setModel(self.model)
         self.tableView_2.setModel(self.model_dolg)
         self.model_dolg.dataChanged.connect(self.updateCellText)
+        self.Update_studen.clicked.connect(self.open_update_student_form)
 
         self.tableView_4.setModel(self.model_all_without)
         self.tableView_4.selectionModel().selectionChanged.connect(self.show_lessons)
@@ -65,9 +67,11 @@ class MainWindow(QMainWindow):
         self.delete_dialog.data_updated.connect(self.show_all_students)
         self.delete_dialog.data_updated.connect(self.show_current_lessons)
         self.add_student_form = AddStudentForm(self.connection)
+        self.update_student_form = UpdateStudentForm(self.connection)
         self.add_student_form.data_updated.connect(self.show_all_students)
         self.add_student_form.data_updated.connect(self.show_students)
         self.add_student_form.data_updated.connect(self.show_current_lessons)
+        self.update_student_form.data_updated.connect(self.show_all_students)
         self.bill_form = billForm(self.connection)
         self.bill_form.list_of_student()
         self.bill_form.studentSelected.connect(self.bill_form.list_of_lessons)
@@ -89,6 +93,8 @@ class MainWindow(QMainWindow):
 
         self.add_student_form.show()
 
+    def open_update_student_form(self):
+        self.update_student_form.show()
     def show_all_students(self):
 
         self.results = self.Tconnection()
