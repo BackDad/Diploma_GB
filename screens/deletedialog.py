@@ -22,7 +22,7 @@ class DeleteDialog(QDialog):
         try:
             if id_s != "":
                 with self.connection.cursor() as cursor:
-                    cursor.execute('DELETE FROM Students WHERE id = %s LIMIT 1', id_s)
+                    cursor.execute('DELETE FROM students WHERE id = %s LIMIT 1', id_s)
                     self.connection.commit()
                     self.Delete_error.setText("Удалено успешно!")
                     self.data_updated.emit()
